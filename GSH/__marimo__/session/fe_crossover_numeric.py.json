@@ -1,0 +1,106 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.23.13",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "2934e99abb709c2eee89ee23d2f2abea",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"feal-crossover-oq-gsh8-numeric-instance\">Fe/Al \u03c4* Crossover \u2014 OQ-GSH.8 Numeric Instance</h1>\n<span class=\"paragraph\">Populates check 7's crossover formula with real supply-chain data for the\nFe (incumbent) vs. Al geometric substitute comparison.</span>\n<span class=\"paragraph\"><strong>Source mapping:</strong></span>\n<ul>\n<li><code>\u03a3_cap_s</code> = extraction exergy of Fe + deferred Axiom II recovery cost</li>\n<li><code>\u03a3_cap_g</code> = extraction exergy of Al geometric substitute</li>\n<li><code>r_s</code> = ongoing entropy rate of Fe supply chain (corrosion-dominated)</li>\n<li><code>r_g</code> = ongoing maintenance entropy rate of Al substitute (\u2248 0, self-passivating)</li>\n</ul>\n<span class=\"paragraph\"><strong>Data sources:</strong> Szargut (1988) standard chemical exergies \u00b7 NIST WebBook \u00b7 ISO 9223</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "f24b88a98921b418262b46f7eaffc783",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "662a38f257299917e7e10260137ea60f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"parameters\">Parameters</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "d0a0dd2993de24f14f5b86c75f7b8b47",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='lEQa-0' random-id='5733e147-4a18-b582-5c19-12d4bd159819'><marimo-slider data-initial-value='1000' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eFe structure mass (kg)&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='100' data-stop='10000' data-step='100' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element><marimo-ui-element object-id='lEQa-1' random-id='fd9c47e0-a671-b4d0-747f-b3883f2ec9b9'><marimo-slider data-initial-value='10' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eExposed surface area (m\u00b2)&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='200' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element><marimo-ui-element object-id='lEQa-2' random-id='f3a38227-44c5-2f29-7c7f-69d01d020b66'><marimo-slider data-initial-value='25' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eCorrosion rate (\u03bcm/yr)&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-start='1' data-stop='200' data-step='1' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element><marimo-ui-element object-id='lEQa-3' random-id='eaf7d0d5-f7d6-f775-a028-50bbe776d9a6'><marimo-checkbox data-initial-value='true' data-label='&quot;&#92;u003cspan class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&#92;u003e&#92;u003cspan class=&#92;&quot;paragraph&#92;&quot;&#92;u003eEqual-volume substitution (uncheck for equal-mass)&#92;u003c/span&#92;u003e&#92;u003c/span&#92;u003e&quot;' data-disabled='false'></marimo-checkbox></marimo-ui-element></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "7b13983b6610e43c8847c9d865921000",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "e70a95bdb57b8277bcb1dcbb3700bba9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"results\">Results</h2>\n<table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Fe structure mass</td>\n<td>1800 kg</td>\n</tr>\n<tr>\n<td>Al substitute mass</td>\n<td>617 kg</td>\n</tr>\n<tr>\n<td>\u03a3_cap_s (Fe extraction)</td>\n<td>40691435.5 J/K</td>\n</tr>\n<tr>\n<td>\u03a3_cap_s (Fe recycling)</td>\n<td>40118468.9 J/K</td>\n</tr>\n<tr>\n<td><strong>\u03a3_cap_s total</strong></td>\n<td><strong>80809904.4 J/K</strong></td>\n</tr>\n<tr>\n<td><strong>\u03a3_cap_g (Al extraction)</strong></td>\n<td><strong>68161706.8 J/K</strong></td>\n</tr>\n<tr>\n<td>r_s (Fe corrosion entropy rate)</td>\n<td>3.5786e-02 W/K</td>\n</tr>\n<tr>\n<td>r_g (Al maintenance)</td>\n<td>0.0000e+00 W/K</td>\n</tr>\n<tr>\n<td><strong>\u03c4</strong>*</td>\n<td><strong>-11.2 years</strong></td>\n</tr>\n<tr>\n<td>Regime</td>\n<td>Geometry unconditionally cheaper \u2014 no crossover needed</td>\n</tr>\n</tbody>\n</table></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "eace3aa5ee1455d6c5b5363bf5224673",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
