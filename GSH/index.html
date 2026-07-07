@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-CZceb_kH.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-Bam3NpBI.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-C_DwAp7Z.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-CEsLFVD9.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-D5MAsWEG.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-C6PDArdf.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        const scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          // Guard against race condition where iframe isn't ready
+          if (!obj.contentWindow?.document?.documentElement) {
+            return;
+          }
+          const element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          const hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          const newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((_entries) => {
+          setHeight();
+        });
+        // Only observe if iframe content is ready
+        if (obj.contentWindow?.document?.body) {
+          resizeObserver.observe(obj.contentWindow.document.body);
+        }
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>fe crossover numeric</title>
+    <script type="module" crossorigin src="./assets/index-iAj2M3os.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-y72bE5iF.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-LvLJmgfZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-Bj1aDYRI.js">
+    <link rel="modulepreload" crossorigin href="./assets/compiler-runtime-B3qBwwSJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime-PbYoItBR.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEventListener-BakX-tnw.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-CuYNS33t.js">
+    <link rel="modulepreload" crossorigin href="./assets/precisionRound-CCOoIlcP.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-CGfP-Ye3.js">
+    <link rel="modulepreload" crossorigin href="./assets/vega-loader.browser-BJ9oKrvH.js">
+    <link rel="modulepreload" crossorigin href="./assets/utils-BIlJBJIu.js">
+    <link rel="modulepreload" crossorigin href="./assets/clsx-BtEcuwwV.js">
+    <link rel="modulepreload" crossorigin href="./assets/cn-X2M2usMq.js">
+    <link rel="modulepreload" crossorigin href="./assets/badge-CFAaMy0O.js">
+    <link rel="modulepreload" crossorigin href="./assets/button-BF7GSjhW.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-dom-CSu739Rf.js">
+    <link rel="modulepreload" crossorigin href="./assets/fullscreen-BXI8V5i6.js">
+    <link rel="modulepreload" crossorigin href="./assets/menu-items-CQMqwayA.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DCqDlsgq.js">
+    <link rel="modulepreload" crossorigin href="./assets/createLucideIcon-BTp1tQDO.js">
+    <link rel="modulepreload" crossorigin href="./assets/check-DQmqoJgr.js">
+    <link rel="modulepreload" crossorigin href="./assets/x-9vLEgLY6.js">
+    <link rel="modulepreload" crossorigin href="./assets/select-Cjly7tmx.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-CgQpRVyN.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-toast-BH8bU9Xf.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEvent-D91BmmQi.js">
+    <link rel="modulepreload" crossorigin href="./assets/invariant-C2E8KCbD.js">
+    <link rel="modulepreload" crossorigin href="./assets/isObject-DvLSfCY5.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseFor-DKD1r8uL.js">
+    <link rel="modulepreload" crossorigin href="./assets/merge-_9WLTEyt.js">
+    <link rel="modulepreload" crossorigin href="./assets/zod-H_cgTO0M.js">
+    <link rel="modulepreload" crossorigin href="./assets/utils-Dev6I_Kv.js">
+    <link rel="modulepreload" crossorigin href="./assets/Deferred-CfyqLOPG.js">
+    <link rel="modulepreload" crossorigin href="./assets/uuid-BukULOeS.js">
+    <link rel="modulepreload" crossorigin href="./assets/DeferredRequestRegistry-EP9ZArpv.js">
+    <link rel="modulepreload" crossorigin href="./assets/constants-B9JJ72XE.js">
+    <link rel="modulepreload" crossorigin href="./assets/session-B6_8umQX.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-BE150fVL.js">
+    <link rel="modulepreload" crossorigin href="./assets/requests-KshNNAOp.js">
+    <link rel="modulepreload" crossorigin href="./assets/useLifecycle-Baf35rp4.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNonce-0SWz6w4W.js">
+    <link rel="modulepreload" crossorigin href="./assets/useTheme-CWoNQwFz.js">
+    <link rel="modulepreload" crossorigin href="./assets/arrays-DWxvyYxP.js">
+    <link rel="modulepreload" crossorigin href="./assets/strings-DvZlHYnD.js">
+    <link rel="modulepreload" crossorigin href="./assets/once-CXj_gH7S.js">
+    <link rel="modulepreload" crossorigin href="./assets/capabilities-CjNGDxxx.js">
+    <link rel="modulepreload" crossorigin href="./assets/createReducer-3wF4dU7I.js">
+    <link rel="modulepreload" crossorigin href="./assets/paths-kNeJ8nbe.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Dez1I5M9.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-B0WqBUnf.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CwfKvuyQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-D-o1OXc9.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BZhJ1bTM.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-Bj9Iedc0.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DHMtQYxT.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DnIl7RU-.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CfGDksO-.js">
+    <link rel="modulepreload" crossorigin href="./assets/stex-C6JeW1YI.js">
+    <link rel="modulepreload" crossorigin href="./assets/toDate-DCE7d2fN.js">
+    <link rel="modulepreload" crossorigin href="./assets/purify.es-DdxMtdqK.js">
+    <link rel="modulepreload" crossorigin href="./assets/cjs-DXo9vDEJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/isSymbol-BT6B8Bon.js">
+    <link rel="modulepreload" crossorigin href="./assets/now-CsYTPAhW.js">
+    <link rel="modulepreload" crossorigin href="./assets/debounce-OiXznToA.js">
+    <link rel="modulepreload" crossorigin href="./assets/database-zap-DIlSqcdp.js">
+    <link rel="modulepreload" crossorigin href="./assets/main-DmhaVp6Y.js">
+    <link rel="modulepreload" crossorigin href="./assets/cells-DQ5n6Zef.js">
+    <link rel="modulepreload" crossorigin href="./assets/ErrorBoundary-Bo313Z9X.js">
+    <link rel="modulepreload" crossorigin href="./assets/kbd-BCXa3Ocm.js">
+    <link rel="modulepreload" crossorigin href="./assets/useInstallPackage-DEHK-C20.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-dialog-CC0gG4Av.js">
+    <link rel="modulepreload" crossorigin href="./assets/dialog-Dr_Y1zNi.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDebounce-BlBSYv0n.js">
+    <link rel="modulepreload" crossorigin href="./assets/numbers-BKZTJMZ6.js">
+    <link rel="modulepreload" crossorigin href="./assets/SSRProvider-DrpctNAg.js">
+    <link rel="modulepreload" crossorigin href="./assets/context-DE_5rdOV.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNumberFormatter-DCM-63YT.js">
+    <link rel="modulepreload" crossorigin href="./assets/usePress-mjvipKvz.js">
+    <link rel="modulepreload" crossorigin href="./assets/input-b2KTOk0X.js">
+    <link rel="modulepreload" crossorigin href="./assets/ImperativeModal-MQnbMIO2.js">
+    <link rel="modulepreload" crossorigin href="./assets/cell-link-LArpBcY-.js">
+    <link rel="modulepreload" crossorigin href="./assets/multi-map-9ogswH46.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-Bjh7v4lb.js">
+    <link rel="modulepreload" crossorigin href="./assets/chevron-right-C7RH0Nc7.js">
+    <link rel="modulepreload" crossorigin href="./assets/dropdown-menu-DfGLyCbP.js">
+    <link rel="modulepreload" crossorigin href="./assets/links-DK7te6sJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/useRunCells-bcK6jTD2.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-CyasABTK.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-IBNGDypD.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-icon-BCIGtBo0.js">
+    <link rel="modulepreload" crossorigin href="./assets/RenderHTML-BLBwT24G.js">
+    <link rel="modulepreload" crossorigin href="./assets/datasource-BT-L2LDD.js">
+    <link rel="modulepreload" crossorigin href="./assets/state-VxOqftwq.js">
+    <link rel="modulepreload" crossorigin href="./assets/package-BoMcg6sy.js">
+    <link rel="modulepreload" crossorigin href="./assets/sparkles-DctOjjEz.js">
+    <link rel="modulepreload" crossorigin href="./assets/MarimoErrorOutput-DcImOp4r.js">
+    <link rel="modulepreload" crossorigin href="./assets/eye-off-DI0EQXw0.js">
+    <link rel="modulepreload" crossorigin href="./assets/refresh-cw-DcEasnos.js">
+    <link rel="modulepreload" crossorigin href="./assets/tree-actions-CjikjOBA.js">
+    <link rel="modulepreload" crossorigin href="./assets/spinner-DTBVbtl-.js">
+    <link rel="modulepreload" crossorigin href="./assets/html-to-image-CmK-WSPG.js">
+    <link rel="modulepreload" crossorigin href="./assets/focus-Dol5ybck.js">
+    <link rel="modulepreload" crossorigin href="./assets/useAsyncData-CT1LpOBD.js">
+    <link rel="modulepreload" crossorigin href="./assets/LazyAnyLanguageCodeMirror-CUQODgGJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/micromark-factory-space-P--XWZhg.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-5FQGJX7Z-C6VN0dQj.js">
+    <link rel="modulepreload" crossorigin href="./assets/markdown-renderer-f3mfGw8u.js">
+    <link rel="modulepreload" crossorigin href="./assets/command-CsbsBLBw.js">
+    <link rel="modulepreload" crossorigin href="./assets/field-CA9HCE2Y.js">
+    <link rel="modulepreload" crossorigin href="./assets/popover-DMNO6Poc.js">
+    <link rel="modulepreload" crossorigin href="./assets/errors-48KFPvCp.js">
+    <link rel="modulepreload" crossorigin href="./assets/download-rKGlekSQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/table-Fk_msRcD.js">
+    <link rel="modulepreload" crossorigin href="./assets/useIframeCapabilities-DuGyzPVb.js">
+    <link rel="modulepreload" crossorigin href="./assets/error-banner-C4DZksWV.js">
+    <link rel="modulepreload" crossorigin href="./assets/formats-Dkhsq416.js">
+    <link rel="modulepreload" crossorigin href="./assets/en-US-DZwIjHwu.js">
+    <link rel="modulepreload" crossorigin href="./assets/isValid-Cgon0fXK.js">
+    <link rel="modulepreload" crossorigin href="./assets/dates-CnrjjcMO.js">
+    <link rel="modulepreload" crossorigin href="./assets/extends-2LbFKIQQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/emotion-is-prop-valid.esm-DiQGBfwj.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDateFormatter-CANi6nSX.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-icons.esm-C2u-_EAQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/RSPContexts-CXueMbRb.js">
+    <link rel="modulepreload" crossorigin href="./assets/table-DxdydCSG.js">
+    <link rel="modulepreload" crossorigin href="./assets/ellipsis-D0iYysLh.js">
+    <link rel="modulepreload" crossorigin href="./assets/external-link-BktyywYg.js">
+    <link rel="modulepreload" crossorigin href="./assets/message-circle-D_YIPPZo.js">
+    <link rel="modulepreload" crossorigin href="./assets/plus-CExKUszm.js">
+    <link rel="modulepreload" crossorigin href="./assets/trash-2-CjPoUZCP.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-resizable-panels.browser.esm-CgWOEYeG.js">
+    <link rel="modulepreload" crossorigin href="./assets/JsonOutput-DTeVFctC.js">
+    <link rel="modulepreload" crossorigin href="./assets/chart-no-axes-column-DVEV2j1H.js">
+    <link rel="modulepreload" crossorigin href="./assets/square-function-CPbVtjKW.js">
+    <link rel="modulepreload" crossorigin href="./assets/spec-BzxoPflZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/column-preview-VcOeHtkt.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-D3YFXNmD.js">
+    <link rel="modulepreload" crossorigin href="./assets/radio-group-D7RG9Px_.js">
+    <link rel="modulepreload" crossorigin href="./assets/floating-outline-CPTvLHMl.js">
+    <link rel="modulepreload" crossorigin href="./assets/objectWithoutPropertiesLoose-Msf1n32r.js">
+    <link rel="modulepreload" crossorigin href="./assets/esm-DSv-aO_T.js">
+    <link rel="modulepreload" crossorigin href="./assets/readonly-python-code-DHJTIc4H.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-headphone-CUN2DC78.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-BvoBtS_V.js">
+    <link rel="modulepreload" crossorigin href="./assets/image-jhXeQEgs.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-icons-DBMviz_K.js">
+    <link rel="modulepreload" crossorigin href="./assets/switch-DHhZkGEv.js">
+    <link rel="modulepreload" crossorigin href="./assets/events-BRbNg7Li.js">
+    <link rel="modulepreload" crossorigin href="./assets/globals-BDWM3c_z.js">
+    <link rel="modulepreload" crossorigin href="./assets/share-vrPro738.js">
+    <link rel="modulepreload" crossorigin href="./assets/blob-dGUJ3Bw8.js">
+    <link rel="modulepreload" crossorigin href="./assets/memoize-Tp7rARFe.js">
+    <link rel="modulepreload" crossorigin href="./assets/get-C-qh_et5.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseSet-CsW0tABf.js">
+    <link rel="modulepreload" crossorigin href="./assets/state-D7fu7IC3.js">
+    <link rel="modulepreload" crossorigin href="./assets/label-CFvCMYuj.js">
+    <link rel="modulepreload" crossorigin href="./assets/textarea-DD5BwHTh.js">
+    <link rel="modulepreload" crossorigin href="./assets/refresh-ccw-CUkO1Vlo.js">
+    <link rel="modulepreload" crossorigin href="./assets/form-B9I9mpZy.js">
+    <link rel="modulepreload" crossorigin href="./assets/renderShortcut-CKbqJyj4.js">
+    <link rel="modulepreload" crossorigin href="./assets/useBoolean-48bgGoSa.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDeepCompareMemoize-zUHU--0D.js">
+    <link rel="modulepreload" crossorigin href="./assets/types-xF5uWODg.js">
+    <link rel="modulepreload" crossorigin href="./assets/semaphore-FlZezxaf.js">
+    <link rel="modulepreload" crossorigin href="./assets/fileToBase64-Doh9J-g6.js">
+    <link rel="modulepreload" crossorigin href="./assets/pathUtils-ANiMIEDI.js">
+    <link rel="modulepreload" crossorigin href="./assets/prop-types-D_pYuT11.js">
+    <link rel="modulepreload" crossorigin href="./assets/es-Cy7KBUrF.js">
+    <link rel="modulepreload" crossorigin href="./assets/_hasPath-hMc_3QZy.js">
+    <link rel="modulepreload" crossorigin href="./assets/hasIn-CSsM95b1.js">
+    <link rel="modulepreload" crossorigin href="./assets/flatten-Bd5tsfm_.js">
+    <link rel="modulepreload" crossorigin href="./assets/pick-D1xb4gl6.js">
+    <link rel="modulepreload" crossorigin href="./assets/code-xml-tqeFGeKJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/house-DkdBWh44.js">
+    <link rel="modulepreload" crossorigin href="./assets/square-DPWHdF_-.js">
+    <link rel="modulepreload" crossorigin href="./assets/triangle-alert-CV7pqa1o.js">
+    <link rel="modulepreload" crossorigin href="./assets/bundle.esm-BULc9l6b.js">
+    <link rel="stylesheet" crossorigin href="./assets/cells-BVzo2MHf.css">
+    <link rel="stylesheet" crossorigin href="./assets/markdown-renderer-DdDKmWlR.css">
+    <link rel="stylesheet" crossorigin href="./assets/JsonOutput-BQtz7-np.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-CaelsqOA.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    
+<script data-marimo="true">
+    Object.defineProperty(window, "__MARIMO_EXPORT_CONTEXT__", {
+        value: Object.freeze({
+            trusted: true,
+            notebookCode: "import marimo\n\n__generated_with = \"0.23.13\"\napp = marimo.App()\n\n\n@app.cell\ndef _():\n    import marimo as mo\n\n    return (mo,)\n\n\n@app.cell\ndef _(mo):\n    mo.md(\"\"\"\n    # Fe/Al \u03c4* Crossover \u2014 OQ-GSH.8 Numeric Instance\n\n    Populates check 7's crossover formula with real supply-chain data for the\n    Fe (incumbent) vs. Al geometric substitute comparison.\n\n    **Source mapping:**\n    - `\u03a3_cap_s` = extraction exergy of Fe + deferred Axiom II recovery cost\n    - `\u03a3_cap_g` = extraction exergy of Al geometric substitute\n    - `r_s` = ongoing entropy rate of Fe supply chain (corrosion-dominated)\n    - `r_g` = ongoing maintenance entropy rate of Al substitute (\u2248 0, self-passivating)\n\n    **Data sources:** Szargut (1988) standard chemical exergies \u00b7 NIST WebBook \u00b7 ISO 9223\n    \"\"\")\n    return\n\n\n@app.cell\ndef _():\n    T0 = 298.15          # K  \u2014 standard dead-state reference temperature\n    R  = 8.314           # J/(mol\u00b7K)\n\n    SZARGUT_B_CH = {\n        \"Fe\": 376_400,\n        \"Al\": 888_400,\n        \"C\":  410_260,\n        \"Si\": 854_600,\n        \"H\":   236_100,\n        \"O\":    3_970,\n    }\n\n    M = {\n        \"Fe\": 55.845,\n        \"Al\": 26.982,\n        \"C\":  12.011,\n        \"O\":  15.999,\n    }\n\n    DG_OXIDATION_FE = -742_200\n    DG_OXIDATION_FE_PER_MOL = DG_OXIDATION_FE / 2\n    DG_REDUCTION_FE2O3 = +742_200\n    DG_REDUCTION_FE_PER_MOL = DG_REDUCTION_FE2O3 / 2\n\n    RHO_FE = 7_874.0\n    RHO_AL = 2_700.0\n    SECONDS_PER_YEAR = 365.25 * 24 * 3600\n    return (\n        DG_OXIDATION_FE_PER_MOL,\n        DG_REDUCTION_FE_PER_MOL,\n        M,\n        RHO_AL,\n        RHO_FE,\n        SECONDS_PER_YEAR,\n        SZARGUT_B_CH,\n        T0,\n    )\n\n\n@app.cell\ndef _(mo):\n    mo.md(\"\"\"\n    ## Parameters\n    \"\"\")\n    return\n\n\n@app.cell\ndef _(mo):\n    fe_mass_slider = mo.ui.slider(100, 10_000, step=100, value=1_000, label=\"Fe structure mass (kg)\")\n    area_slider    = mo.ui.slider(1, 200, step=1, value=10, label=\"Exposed surface area (m\u00b2)\")\n    corr_slider    = mo.ui.slider(1, 200, step=1, value=25, label=\"Corrosion rate (\u03bcm/yr)\")\n    equal_vol      = mo.ui.checkbox(value=True, label=\"Equal-volume substitution (uncheck for equal-mass)\")\n    mo.vstack([fe_mass_slider, area_slider, corr_slider, equal_vol])\n    return area_slider, corr_slider, equal_vol, fe_mass_slider\n\n\n@app.cell\ndef _(\n    DG_OXIDATION_FE_PER_MOL,\n    DG_REDUCTION_FE_PER_MOL,\n    M,\n    RHO_AL,\n    RHO_FE,\n    SECONDS_PER_YEAR,\n    SZARGUT_B_CH,\n    T0,\n    area_slider,\n    corr_slider,\n    equal_vol,\n    fe_mass_slider,\n):\n    fe_mass_kg     = fe_mass_slider.value\n    surface_area   = area_slider.value\n    corr_um_yr     = corr_slider.value\n    al_mass_kg     = fe_mass_kg * (RHO_AL / RHO_FE) if equal_vol.value else fe_mass_kg\n\n    def sigma_cap_per_kg(element):\n        return (SZARGUT_B_CH[element] / (M[element] / 1000)) / T0\n\n    def sigma_rec_fe_per_kg():\n        return (abs(DG_REDUCTION_FE_PER_MOL) / (M[\"Fe\"] / 1000)) / T0\n\n    def r_corr_to_entropy_rate(corr_rate_m_per_s, surface_area_m2):\n        molar_flux     = (corr_rate_m_per_s * RHO_FE * 1000) / M[\"Fe\"]\n        power_per_area = molar_flux * abs(DG_OXIDATION_FE_PER_MOL)\n        return (power_per_area * surface_area_m2) / T0\n\n    corr_m_s      = (corr_um_yr * 1e-6) / SECONDS_PER_YEAR\n    sigma_cap_fe  = sigma_cap_per_kg(\"Fe\") * fe_mass_kg\n    sigma_rec_fe  = sigma_rec_fe_per_kg()  * fe_mass_kg\n    sigma_cap_s   = sigma_cap_fe + sigma_rec_fe\n    sigma_cap_g   = sigma_cap_per_kg(\"Al\") * al_mass_kg\n    r_s           = r_corr_to_entropy_rate(corr_m_s, surface_area)\n    r_g           = 0.0\n\n    numerator     = sigma_cap_g - sigma_cap_s\n    denominator   = r_s - r_g\n    tau_star_s    = numerator / denominator if abs(denominator) \u003E 1e-30 else float(\"inf\")\n    tau_star_yr   = tau_star_s / SECONDS_PER_YEAR\n\n    regime = (\n        \"Favourable substitution at \u03c4 \u003E \u03c4*\" if tau_star_yr \u003E 0 else\n        \"Geometry unconditionally cheaper \u2014 no crossover needed\" if (tau_star_yr \u003C 0 and numerator \u003C 0) else\n        \"Geometry unconditionally more expensive \u2014 no crossover exists\"\n    )\n    return (\n        al_mass_kg,\n        fe_mass_kg,\n        numerator,\n        r_g,\n        r_s,\n        regime,\n        sigma_cap_fe,\n        sigma_cap_g,\n        sigma_cap_s,\n        sigma_rec_fe,\n        tau_star_yr,\n    )\n\n\n@app.cell\ndef _(\n    al_mass_kg,\n    fe_mass_kg,\n    mo,\n    r_g,\n    r_s,\n    regime,\n    sigma_cap_fe,\n    sigma_cap_g,\n    sigma_cap_s,\n    sigma_rec_fe,\n    tau_star_yr,\n):\n    mo.md(f\"\"\"\n    ## Results\n\n    | Parameter | Value |\n    |---|---|\n    | Fe structure mass | {fe_mass_kg:.0f} kg |\n    | Al substitute mass | {al_mass_kg:.0f} kg |\n    | \u03a3_cap_s (Fe extraction) | {sigma_cap_fe:.1f} J/K |\n    | \u03a3_cap_s (Fe recycling) | {sigma_rec_fe:.1f} J/K |\n    | **\u03a3_cap_s total** | **{sigma_cap_s:.1f} J/K** |\n    | **\u03a3_cap_g (Al extraction)** | **{sigma_cap_g:.1f} J/K** |\n    | r_s (Fe corrosion entropy rate) | {r_s:.4e} W/K |\n    | r_g (Al maintenance) | {r_g:.4e} W/K |\n    | **\u03c4*** | **{tau_star_yr:.1f} years** |\n    | Regime | {regime} |\n    \"\"\")\n    return\n\n\n@app.cell\ndef _(mo, numerator, r_g, r_s, sigma_cap_g, sigma_cap_s, tau_star_yr):\n    import matplotlib.pyplot as plt\n    import numpy as np\n\n    tau_max = max(tau_star_yr * 2.5, 200) if tau_star_yr \u003E 0 else 500\n    tau = np.linspace(0, tau_max, 500)\n\n    SECONDS_PER_YEAR_plot = 365.25 * 24 * 3600\n    sigma_s = sigma_cap_s + r_s * tau * SECONDS_PER_YEAR_plot\n    sigma_g = sigma_cap_g + r_g * tau * SECONDS_PER_YEAR_plot\n\n    fig, ax = plt.subplots(figsize=(8, 5))\n    ax.plot(tau, sigma_s, label=\"\u03a3_s \u2014 Fe supply chain\", color=\"#c0392b\")\n    ax.plot(tau, sigma_g, label=\"\u03a3_g \u2014 Al geometric substitute\", color=\"#2980b9\")\n\n    if tau_star_yr \u003E 0:\n        crossover_y = sigma_cap_s + r_s * tau_star_yr * SECONDS_PER_YEAR_plot\n        ax.axvline(tau_star_yr, color=\"#7f8c8d\", linestyle=\"--\", linewidth=1)\n        ax.plot(tau_star_yr, crossover_y, \"o\", color=\"#7f8c8d\", markersize=6)\n        ax.annotate(\n            f\"\u03c4* = {tau_star_yr:.0f} yr\",\n            xy=(tau_star_yr, crossover_y),\n            xytext=(tau_star_yr + tau_max * 0.04, crossover_y),\n            fontsize=9, color=\"#7f8c8d\",\n            va=\"center\",\n        )\n        # shade regions\n        ax.axvspan(0, tau_star_yr, alpha=0.05, color=\"#c0392b\", label=\"Fe cheaper\")\n        ax.axvspan(tau_star_yr, tau_max, alpha=0.05, color=\"#2980b9\", label=\"Al cheaper\")\n    elif tau_star_yr \u003C 0 and numerator \u003C 0:\n        ax.text(\n            0.5, 0.92, \"Al substitute unconditionally cheaper \u2014 no crossover\",\n            transform=ax.transAxes, ha=\"center\", fontsize=9,\n            color=\"#2980b9\", style=\"italic\",\n        )\n    else:\n        ax.text(\n            0.5, 0.92, \"Fe unconditionally cheaper \u2014 no crossover exists\",\n            transform=ax.transAxes, ha=\"center\", fontsize=9,\n            color=\"#c0392b\", style=\"italic\",\n        )\n\n    ax.set_xlabel(\"Deployment lifetime \u03c4 (years)\")\n    ax.set_ylabel(\"Cumulative entropy (J/K)\")\n    ax.set_title(\"Fe vs. Al geometric substitute \u2014 entropy crossover\")\n    ax.legend()\n    ax.grid(True, alpha=0.3)\n    fig.tight_layout()\n\n    mo.mpl.interactive(fig)\n    return\n\n\nif __name__ == \"__main__\":\n    app.run()\n",
+        }),
+        writable: false,
+        configurable: false,
+    });
+</script>
+<marimo-code hidden="">import%20marimo%0A%0A__generated_with%20%3D%20%220.23.13%22%0Aapp%20%3D%20marimo.App()%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%0A%20%20%20%20return%20(mo%2C)%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%0A%20%20%20%20%23%20Fe%2FAl%20%CF%84*%20Crossover%20%E2%80%94%20OQ-GSH.8%20Numeric%20Instance%0A%0A%20%20%20%20Populates%20check%207's%20crossover%20formula%20with%20real%20supply-chain%20data%20for%20the%0A%20%20%20%20Fe%20(incumbent)%20vs.%20Al%20geometric%20substitute%20comparison.%0A%0A%20%20%20%20**Source%20mapping%3A**%0A%20%20%20%20-%20%60%CE%A3_cap_s%60%20%3D%20extraction%20exergy%20of%20Fe%20%2B%20deferred%20Axiom%20II%20recovery%20cost%0A%20%20%20%20-%20%60%CE%A3_cap_g%60%20%3D%20extraction%20exergy%20of%20Al%20geometric%20substitute%0A%20%20%20%20-%20%60r_s%60%20%3D%20ongoing%20entropy%20rate%20of%20Fe%20supply%20chain%20(corrosion-dominated)%0A%20%20%20%20-%20%60r_g%60%20%3D%20ongoing%20maintenance%20entropy%20rate%20of%20Al%20substitute%20(%E2%89%88%200%2C%20self-passivating)%0A%0A%20%20%20%20**Data%20sources%3A**%20Szargut%20(1988)%20standard%20chemical%20exergies%20%C2%B7%20NIST%20WebBook%20%C2%B7%20ISO%209223%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20T0%20%3D%20298.15%20%20%20%20%20%20%20%20%20%20%23%20K%20%20%E2%80%94%20standard%20dead-state%20reference%20temperature%0A%20%20%20%20R%20%20%3D%208.314%20%20%20%20%20%20%20%20%20%20%20%23%20J%2F(mol%C2%B7K)%0A%0A%20%20%20%20SZARGUT_B_CH%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%22Fe%22%3A%20376_400%2C%0A%20%20%20%20%20%20%20%20%22Al%22%3A%20888_400%2C%0A%20%20%20%20%20%20%20%20%22C%22%3A%20%20410_260%2C%0A%20%20%20%20%20%20%20%20%22Si%22%3A%20854_600%2C%0A%20%20%20%20%20%20%20%20%22H%22%3A%20%20%20236_100%2C%0A%20%20%20%20%20%20%20%20%22O%22%3A%20%20%20%203_970%2C%0A%20%20%20%20%7D%0A%0A%20%20%20%20M%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%22Fe%22%3A%2055.845%2C%0A%20%20%20%20%20%20%20%20%22Al%22%3A%2026.982%2C%0A%20%20%20%20%20%20%20%20%22C%22%3A%20%2012.011%2C%0A%20%20%20%20%20%20%20%20%22O%22%3A%20%2015.999%2C%0A%20%20%20%20%7D%0A%0A%20%20%20%20DG_OXIDATION_FE%20%3D%20-742_200%0A%20%20%20%20DG_OXIDATION_FE_PER_MOL%20%3D%20DG_OXIDATION_FE%20%2F%202%0A%20%20%20%20DG_REDUCTION_FE2O3%20%3D%20%2B742_200%0A%20%20%20%20DG_REDUCTION_FE_PER_MOL%20%3D%20DG_REDUCTION_FE2O3%20%2F%202%0A%0A%20%20%20%20RHO_FE%20%3D%207_874.0%0A%20%20%20%20RHO_AL%20%3D%202_700.0%0A%20%20%20%20SECONDS_PER_YEAR%20%3D%20365.25%20*%2024%20*%203600%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20DG_OXIDATION_FE_PER_MOL%2C%0A%20%20%20%20%20%20%20%20DG_REDUCTION_FE_PER_MOL%2C%0A%20%20%20%20%20%20%20%20M%2C%0A%20%20%20%20%20%20%20%20RHO_AL%2C%0A%20%20%20%20%20%20%20%20RHO_FE%2C%0A%20%20%20%20%20%20%20%20SECONDS_PER_YEAR%2C%0A%20%20%20%20%20%20%20%20SZARGUT_B_CH%2C%0A%20%20%20%20%20%20%20%20T0%2C%0A%20%20%20%20)%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%0A%20%20%20%20%23%23%20Parameters%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20fe_mass_slider%20%3D%20mo.ui.slider(100%2C%2010_000%2C%20step%3D100%2C%20value%3D1_000%2C%20label%3D%22Fe%20structure%20mass%20(kg)%22)%0A%20%20%20%20area_slider%20%20%20%20%3D%20mo.ui.slider(1%2C%20200%2C%20step%3D1%2C%20value%3D10%2C%20label%3D%22Exposed%20surface%20area%20(m%C2%B2)%22)%0A%20%20%20%20corr_slider%20%20%20%20%3D%20mo.ui.slider(1%2C%20200%2C%20step%3D1%2C%20value%3D25%2C%20label%3D%22Corrosion%20rate%20(%CE%BCm%2Fyr)%22)%0A%20%20%20%20equal_vol%20%20%20%20%20%20%3D%20mo.ui.checkbox(value%3DTrue%2C%20label%3D%22Equal-volume%20substitution%20(uncheck%20for%20equal-mass)%22)%0A%20%20%20%20mo.vstack(%5Bfe_mass_slider%2C%20area_slider%2C%20corr_slider%2C%20equal_vol%5D)%0A%20%20%20%20return%20area_slider%2C%20corr_slider%2C%20equal_vol%2C%20fe_mass_slider%0A%0A%0A%40app.cell%0Adef%20_(%0A%20%20%20%20DG_OXIDATION_FE_PER_MOL%2C%0A%20%20%20%20DG_REDUCTION_FE_PER_MOL%2C%0A%20%20%20%20M%2C%0A%20%20%20%20RHO_AL%2C%0A%20%20%20%20RHO_FE%2C%0A%20%20%20%20SECONDS_PER_YEAR%2C%0A%20%20%20%20SZARGUT_B_CH%2C%0A%20%20%20%20T0%2C%0A%20%20%20%20area_slider%2C%0A%20%20%20%20corr_slider%2C%0A%20%20%20%20equal_vol%2C%0A%20%20%20%20fe_mass_slider%2C%0A)%3A%0A%20%20%20%20fe_mass_kg%20%20%20%20%20%3D%20fe_mass_slider.value%0A%20%20%20%20surface_area%20%20%20%3D%20area_slider.value%0A%20%20%20%20corr_um_yr%20%20%20%20%20%3D%20corr_slider.value%0A%20%20%20%20al_mass_kg%20%20%20%20%20%3D%20fe_mass_kg%20*%20(RHO_AL%20%2F%20RHO_FE)%20if%20equal_vol.value%20else%20fe_mass_kg%0A%0A%20%20%20%20def%20sigma_cap_per_kg(element)%3A%0A%20%20%20%20%20%20%20%20return%20(SZARGUT_B_CH%5Belement%5D%20%2F%20(M%5Belement%5D%20%2F%201000))%20%2F%20T0%0A%0A%20%20%20%20def%20sigma_rec_fe_per_kg()%3A%0A%20%20%20%20%20%20%20%20return%20(abs(DG_REDUCTION_FE_PER_MOL)%20%2F%20(M%5B%22Fe%22%5D%20%2F%201000))%20%2F%20T0%0A%0A%20%20%20%20def%20r_corr_to_entropy_rate(corr_rate_m_per_s%2C%20surface_area_m2)%3A%0A%20%20%20%20%20%20%20%20molar_flux%20%20%20%20%20%3D%20(corr_rate_m_per_s%20*%20RHO_FE%20*%201000)%20%2F%20M%5B%22Fe%22%5D%0A%20%20%20%20%20%20%20%20power_per_area%20%3D%20molar_flux%20*%20abs(DG_OXIDATION_FE_PER_MOL)%0A%20%20%20%20%20%20%20%20return%20(power_per_area%20*%20surface_area_m2)%20%2F%20T0%0A%0A%20%20%20%20corr_m_s%20%20%20%20%20%20%3D%20(corr_um_yr%20*%201e-6)%20%2F%20SECONDS_PER_YEAR%0A%20%20%20%20sigma_cap_fe%20%20%3D%20sigma_cap_per_kg(%22Fe%22)%20*%20fe_mass_kg%0A%20%20%20%20sigma_rec_fe%20%20%3D%20sigma_rec_fe_per_kg()%20%20*%20fe_mass_kg%0A%20%20%20%20sigma_cap_s%20%20%20%3D%20sigma_cap_fe%20%2B%20sigma_rec_fe%0A%20%20%20%20sigma_cap_g%20%20%20%3D%20sigma_cap_per_kg(%22Al%22)%20*%20al_mass_kg%0A%20%20%20%20r_s%20%20%20%20%20%20%20%20%20%20%20%3D%20r_corr_to_entropy_rate(corr_m_s%2C%20surface_area)%0A%20%20%20%20r_g%20%20%20%20%20%20%20%20%20%20%20%3D%200.0%0A%0A%20%20%20%20numerator%20%20%20%20%20%3D%20sigma_cap_g%20-%20sigma_cap_s%0A%20%20%20%20denominator%20%20%20%3D%20r_s%20-%20r_g%0A%20%20%20%20tau_star_s%20%20%20%20%3D%20numerator%20%2F%20denominator%20if%20abs(denominator)%20%3E%201e-30%20else%20float(%22inf%22)%0A%20%20%20%20tau_star_yr%20%20%20%3D%20tau_star_s%20%2F%20SECONDS_PER_YEAR%0A%0A%20%20%20%20regime%20%3D%20(%0A%20%20%20%20%20%20%20%20%22Favourable%20substitution%20at%20%CF%84%20%3E%20%CF%84*%22%20if%20tau_star_yr%20%3E%200%20else%0A%20%20%20%20%20%20%20%20%22Geometry%20unconditionally%20cheaper%20%E2%80%94%20no%20crossover%20needed%22%20if%20(tau_star_yr%20%3C%200%20and%20numerator%20%3C%200)%20else%0A%20%20%20%20%20%20%20%20%22Geometry%20unconditionally%20more%20expensive%20%E2%80%94%20no%20crossover%20exists%22%0A%20%20%20%20)%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20al_mass_kg%2C%0A%20%20%20%20%20%20%20%20fe_mass_kg%2C%0A%20%20%20%20%20%20%20%20numerator%2C%0A%20%20%20%20%20%20%20%20r_g%2C%0A%20%20%20%20%20%20%20%20r_s%2C%0A%20%20%20%20%20%20%20%20regime%2C%0A%20%20%20%20%20%20%20%20sigma_cap_fe%2C%0A%20%20%20%20%20%20%20%20sigma_cap_g%2C%0A%20%20%20%20%20%20%20%20sigma_cap_s%2C%0A%20%20%20%20%20%20%20%20sigma_rec_fe%2C%0A%20%20%20%20%20%20%20%20tau_star_yr%2C%0A%20%20%20%20)%0A%0A%0A%40app.cell%0Adef%20_(%0A%20%20%20%20al_mass_kg%2C%0A%20%20%20%20fe_mass_kg%2C%0A%20%20%20%20mo%2C%0A%20%20%20%20r_g%2C%0A%20%20%20%20r_s%2C%0A%20%20%20%20regime%2C%0A%20%20%20%20sigma_cap_fe%2C%0A%20%20%20%20sigma_cap_g%2C%0A%20%20%20%20sigma_cap_s%2C%0A%20%20%20%20sigma_rec_fe%2C%0A%20%20%20%20tau_star_yr%2C%0A)%3A%0A%20%20%20%20mo.md(f%22%22%22%0A%20%20%20%20%23%23%20Results%0A%0A%20%20%20%20%7C%20Parameter%20%7C%20Value%20%7C%0A%20%20%20%20%7C---%7C---%7C%0A%20%20%20%20%7C%20Fe%20structure%20mass%20%7C%20%7Bfe_mass_kg%3A.0f%7D%20kg%20%7C%0A%20%20%20%20%7C%20Al%20substitute%20mass%20%7C%20%7Bal_mass_kg%3A.0f%7D%20kg%20%7C%0A%20%20%20%20%7C%20%CE%A3_cap_s%20(Fe%20extraction)%20%7C%20%7Bsigma_cap_fe%3A.1f%7D%20J%2FK%20%7C%0A%20%20%20%20%7C%20%CE%A3_cap_s%20(Fe%20recycling)%20%7C%20%7Bsigma_rec_fe%3A.1f%7D%20J%2FK%20%7C%0A%20%20%20%20%7C%20**%CE%A3_cap_s%20total**%20%7C%20**%7Bsigma_cap_s%3A.1f%7D%20J%2FK**%20%7C%0A%20%20%20%20%7C%20**%CE%A3_cap_g%20(Al%20extraction)**%20%7C%20**%7Bsigma_cap_g%3A.1f%7D%20J%2FK**%20%7C%0A%20%20%20%20%7C%20r_s%20(Fe%20corrosion%20entropy%20rate)%20%7C%20%7Br_s%3A.4e%7D%20W%2FK%20%7C%0A%20%20%20%20%7C%20r_g%20(Al%20maintenance)%20%7C%20%7Br_g%3A.4e%7D%20W%2FK%20%7C%0A%20%20%20%20%7C%20**%CF%84***%20%7C%20**%7Btau_star_yr%3A.1f%7D%20years**%20%7C%0A%20%20%20%20%7C%20Regime%20%7C%20%7Bregime%7D%20%7C%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo%2C%20numerator%2C%20r_g%2C%20r_s%2C%20sigma_cap_g%2C%20sigma_cap_s%2C%20tau_star_yr)%3A%0A%20%20%20%20import%20matplotlib.pyplot%20as%20plt%0A%20%20%20%20import%20numpy%20as%20np%0A%0A%20%20%20%20tau_max%20%3D%20max(tau_star_yr%20*%202.5%2C%20200)%20if%20tau_star_yr%20%3E%200%20else%20500%0A%20%20%20%20tau%20%3D%20np.linspace(0%2C%20tau_max%2C%20500)%0A%0A%20%20%20%20SECONDS_PER_YEAR_plot%20%3D%20365.25%20*%2024%20*%203600%0A%20%20%20%20sigma_s%20%3D%20sigma_cap_s%20%2B%20r_s%20*%20tau%20*%20SECONDS_PER_YEAR_plot%0A%20%20%20%20sigma_g%20%3D%20sigma_cap_g%20%2B%20r_g%20*%20tau%20*%20SECONDS_PER_YEAR_plot%0A%0A%20%20%20%20fig%2C%20ax%20%3D%20plt.subplots(figsize%3D(8%2C%205))%0A%20%20%20%20ax.plot(tau%2C%20sigma_s%2C%20label%3D%22%CE%A3_s%20%E2%80%94%20Fe%20supply%20chain%22%2C%20color%3D%22%23c0392b%22)%0A%20%20%20%20ax.plot(tau%2C%20sigma_g%2C%20label%3D%22%CE%A3_g%20%E2%80%94%20Al%20geometric%20substitute%22%2C%20color%3D%22%232980b9%22)%0A%0A%20%20%20%20if%20tau_star_yr%20%3E%200%3A%0A%20%20%20%20%20%20%20%20crossover_y%20%3D%20sigma_cap_s%20%2B%20r_s%20*%20tau_star_yr%20*%20SECONDS_PER_YEAR_plot%0A%20%20%20%20%20%20%20%20ax.axvline(tau_star_yr%2C%20color%3D%22%237f8c8d%22%2C%20linestyle%3D%22--%22%2C%20linewidth%3D1)%0A%20%20%20%20%20%20%20%20ax.plot(tau_star_yr%2C%20crossover_y%2C%20%22o%22%2C%20color%3D%22%237f8c8d%22%2C%20markersize%3D6)%0A%20%20%20%20%20%20%20%20ax.annotate(%0A%20%20%20%20%20%20%20%20%20%20%20%20f%22%CF%84*%20%3D%20%7Btau_star_yr%3A.0f%7D%20yr%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20xy%3D(tau_star_yr%2C%20crossover_y)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20xytext%3D(tau_star_yr%20%2B%20tau_max%20*%200.04%2C%20crossover_y)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20fontsize%3D9%2C%20color%3D%22%237f8c8d%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20va%3D%22center%22%2C%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20%20%20%23%20shade%20regions%0A%20%20%20%20%20%20%20%20ax.axvspan(0%2C%20tau_star_yr%2C%20alpha%3D0.05%2C%20color%3D%22%23c0392b%22%2C%20label%3D%22Fe%20cheaper%22)%0A%20%20%20%20%20%20%20%20ax.axvspan(tau_star_yr%2C%20tau_max%2C%20alpha%3D0.05%2C%20color%3D%22%232980b9%22%2C%20label%3D%22Al%20cheaper%22)%0A%20%20%20%20elif%20tau_star_yr%20%3C%200%20and%20numerator%20%3C%200%3A%0A%20%20%20%20%20%20%20%20ax.text(%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%200.92%2C%20%22Al%20substitute%20unconditionally%20cheaper%20%E2%80%94%20no%20crossover%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3Dax.transAxes%2C%20ha%3D%22center%22%2C%20fontsize%3D9%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3D%22%232980b9%22%2C%20style%3D%22italic%22%2C%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20ax.text(%0A%20%20%20%20%20%20%20%20%20%20%20%200.5%2C%200.92%2C%20%22Fe%20unconditionally%20cheaper%20%E2%80%94%20no%20crossover%20exists%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20transform%3Dax.transAxes%2C%20ha%3D%22center%22%2C%20fontsize%3D9%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3D%22%23c0392b%22%2C%20style%3D%22italic%22%2C%0A%20%20%20%20%20%20%20%20)%0A%0A%20%20%20%20ax.set_xlabel(%22Deployment%20lifetime%20%CF%84%20(years)%22)%0A%20%20%20%20ax.set_ylabel(%22Cumulative%20entropy%20(J%2FK)%22)%0A%20%20%20%20ax.set_title(%22Fe%20vs.%20Al%20geometric%20substitute%20%E2%80%94%20entropy%20crossover%22)%0A%20%20%20%20ax.legend()%0A%20%20%20%20ax.grid(True%2C%20alpha%3D0.3)%0A%20%20%20%20fig.tight_layout()%0A%0A%20%20%20%20mo.mpl.interactive(fig)%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+    <!-- This is a portal for the data editor to render in -->
+    <div id="portal" data-testid="glide-portal" style="position: fixed; left: 0; top: 0; z-index: 9999"></div>
+    <script data-marimo="true">
+      Object.defineProperty(window, "__MARIMO_MOUNT_CONFIG__", {
+        value: Object.freeze({
+            "filename": "notebook.py",
+            "cwd": "",
+            "lspWorkspace": null,
+            "mode": "read",
+            "version": "0.23.13",
+            "serverToken": "unused",
+            "config": {"ai": {"custom_providers": {}, "enabled": true, "models": {"custom_models": [], "displayed_models": []}}, "completion": {"activate_on_typing": true, "auto_close_pairs": true, "copilot": false, "signature_hint_on_typing": false}, "diagnostics": {"sql_linter": true}, "display": {"cell_output": "below", "code_editor_font_size": 14, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "medium", "reference_highlighting": true, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": false}}, "mcp": {"mcpServers": {}, "presets": []}, "package_management": {"manager": "pip"}, "runtime": {"auto_instantiate": false, "auto_reload": "off", "default_csv_encoding": "utf-8", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "show_tracebacks": false, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "compact"},
+            "view": {"showAppCode": false},
+            "notebook": null,
+            "session": null,
+            "runtimeConfig": null,
+        }),
+        writable: false,
+        configurable: false,
+      });
+    </script>
+  </body>
+</html>
